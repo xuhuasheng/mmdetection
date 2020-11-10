@@ -1,6 +1,6 @@
 model = dict(
     type='FasterRCNN',
-    pretrained='torchvision://resnet50',
+    pretrained='/home/watson/Documents/pretrainedModel/mmDetection/resnet50-19c8e357.pth', #'torchvision://resnet50'
     backbone=dict(
         type='ResNet',
         depth=50,
@@ -43,7 +43,7 @@ model = dict(
             in_channels=256,
             fc_out_channels=1024,
             roi_feat_size=7,
-            num_classes=80,
+            num_classes=2,#80,
             bbox_coder=dict(
                 type='DeltaXYWHBBoxCoder',
                 target_means=[0., 0., 0., 0.],
